@@ -6,8 +6,8 @@ cd "$(dirname "$0")/.."
 docker compose up -d
 echo "Waiting for PostgreSQL..."
 for _ in $(seq 1 60); do
-  if docker compose exec -T postgres psql -U "${PG_USER:-postgres}" -d shop -tAc "SELECT count(*) FROM orders" >/dev/null 2>&1; then
-    echo "Ready: shop.orders has $(docker compose exec -T postgres psql -U "${PG_USER:-postgres}" -d shop -tAc "SELECT count(*) FROM orders") rows."
+  if docker compose exec -T postgres psql -U postgres -d shop -tAc "SELECT count(*) FROM orders" >/dev/null 2>&1; then
+    echo "Ready: shop.orders has $(docker compose exec -T postgres psql -U postgres -d shop -tAc "SELECT count(*) FROM orders") rows."
     exit 0
   fi
   sleep 2

@@ -24,7 +24,7 @@ workflows/                sync.yaml and thread.yaml
 - Docker with Docker Compose (Docker Desktop on Windows and macOS)
 - Python 3.9 or later
 
-Port 5433 is used so that it does not conflict with a PostgreSQL already running on 5432. To change it, edit `PG_PORT` in `.env`.
+Port 5433 is used so that it does not conflict with a PostgreSQL already running on 5432. To change it, edit `DEMO_PG_PORT` in `.env`. The variables are named `DEMO_PG_*` on purpose: a `PG_PORT` or `PG_USER` already set on your machine cannot interfere with the demo.
 
 ## 1. Get the project and install Hydra ETL
 
@@ -107,7 +107,7 @@ On your own PostgreSQL 11 or later:
 
 1. Set `wal_level = logical` (`ALTER SYSTEM SET wal_level = logical;`, then restart PostgreSQL).
 2. Create the databases and the data: `psql -U postgres -f db/initdb.sql` then `psql -U postgres -f db/seed.sql`.
-3. Copy `.env.example` to `.env` and set `PG_HOST`, `PG_PORT`, `PG_USER` (a role with `REPLICATION`) and `PG_PASSWORD`.
+3. Copy `.env.example` to `.env` and set `DEMO_PG_HOST`, `DEMO_PG_PORT`, `DEMO_PG_USER` (a role with `REPLICATION`) and `DEMO_PG_PASSWORD`.
 4. Follow steps 3 to 6, running the SQL files with `psql -U postgres -f db/<name>.sql`.
 
 ## How it works

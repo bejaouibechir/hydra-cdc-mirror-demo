@@ -3,10 +3,10 @@ destinations:
   mirror:
     type: postgresql
     connection:
-      host: "{{ env:PG_HOST }}"
-      port: "{{ env:PG_PORT }}"
-      user: "{{ env:PG_USER }}"
-      password: "{{ env:PG_PASSWORD }}"
+      host: "{{ env:DEMO_PG_HOST }}"
+      port: "{{ env:DEMO_PG_PORT }}"
+      user: "{{ env:DEMO_PG_USER }}"
+      password: "{{ env:DEMO_PG_PASSWORD }}"
       database: analytics
     load:
       table: orders
