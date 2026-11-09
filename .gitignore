@@ -1,0 +1,5 @@
+.env
+.hydra/secrets
+.hydra/undo
+.hydra/workflows/
+__pycache__/

@@ -1,0 +1,9 @@
+{
+  "id": "7c3d9e10",
+  "name": "hydra-cdc-mirror-demo",
+  "description": "Keep a PostgreSQL mirror of a table up to date from its changes (logical replication)",
+  "created_at": "2026-11-09T19:00:00+00:00",
+  "conventions": {"data_dir": "Data", "output_dir": "outputs"},
+  "workflows": [],
+  "jobs": []
+}
